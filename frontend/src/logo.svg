@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <!-- Outer dark circle gradient for 3D depth -->
+    <radialGradient id="outerGrad" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#3a3f52"/>
+      <stop offset="60%" stop-color="#1e2233"/>
+      <stop offset="100%" stop-color="#10131f"/>
+    </radialGradient>
+
+    <!-- Inner circle gradient -->
+    <radialGradient id="innerGrad" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#2a2f42"/>
+      <stop offset="100%" stop-color="#161926"/>
+    </radialGradient>
+
+    <!-- Green glow filter -->
+    <filter id="greenGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Subtle glow for rings -->
+    <filter id="subtleGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Drop shadow -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="18" flood-color="#000000" flood-opacity="0.7"/>
+    </filter>
+
+    <!-- Clip for inner content -->
+    <clipPath id="circleClip">
+      <circle cx="200" cy="200" r="155"/>
+    </clipPath>
+  </defs>
+
+  <!-- Drop shadow layer -->
+  <circle cx="200" cy="210" r="182" fill="#000" opacity="0.45" filter="url(#shadow)"/>
+
+  <!-- Outermost circle (darkest rim) -->
+  <circle cx="200" cy="200" r="188" fill="#0d0f1a"/>
+
+  <!-- Outer ring with gradient -->
+  <circle cx="200" cy="200" r="182" fill="url(#outerGrad)"/>
+
+  <!-- Concentric ring grooves -->
+  <circle cx="200" cy="200" r="175" fill="none" stroke="#12151f" stroke-width="3"/>
+  <circle cx="200" cy="200" r="168" fill="none" stroke="#2a2e3e" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="200" cy="200" r="163" fill="none" stroke="#12151f" stroke-width="2.5"/>
+  <circle cx="200" cy="200" r="158" fill="none" stroke="#252836" stroke-width="1" opacity="0.5"/>
+
+  <!-- Main inner disc -->
+  <circle cx="200" cy="200" r="155" fill="url(#innerGrad)"/>
+
+  <!-- Inner subtle highlight arc (top-left) -->
+  <path d="M 110,140 A 100,100 0 0,1 260,120" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.06" stroke-linecap="round"/>
+
+  <!-- Clipboard body -->
+  <g filter="url(#greenGlow)">
+    <!-- Clipboard rectangle -->
+    <rect x="133" y="148" width="134" height="122" rx="14" ry="14"
+          fill="none"
+          stroke="#4ade98"
+          stroke-width="7"
+          stroke-linejoin="round"/>
+
+    <!-- Clipboard top clip tab -->
+    <rect x="175" y="136" width="50" height="26" rx="13" ry="13"
+          fill="none"
+          stroke="#4ade98"
+          stroke-width="7"/>
+
+    <!-- Pin hole -->
+    <circle cx="200" cy="149" r="5" fill="#4ade98" opacity="0.9"/>
+
+    <!-- Checkmark -->
+    <polyline
+      points="155,203 185,232 248,170"
+      fill="none"
+      stroke="#4ade98"
+      stroke-width="9"
+      stroke-linecap="round"
+      stroke-linejoin="round"/>
+  </g>
+</svg>

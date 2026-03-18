@@ -1,0 +1,72 @@
+/* Task Form Styles */
+.task-form {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.form-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.task-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.task-input:focus {
+  outline: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.task-input:disabled {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.add-btn {
+  padding: 12px 24px;
+  background: white;
+  color: #667eea;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.add-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  background: #f5f5f5;
+}
+
+.add-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.add-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #ff6b6b;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
